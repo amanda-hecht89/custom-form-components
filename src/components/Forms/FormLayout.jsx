@@ -3,8 +3,7 @@ import { InputControl } from './FormControl.jsx';
 
 export default function Form() {
   return (
-    <div>
-      <h1>FORM</h1>
+    <div className={styles.page}>
       <div className={styles.Forms}>
         <form>
 

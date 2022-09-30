@@ -2,9 +2,17 @@
     background: rgb(13, 80, 95);
     display: flex;
     justify-content: center;
+    width: 45%;
+    outline: 5px solid rgb(143, 212, 212);
+    
 }
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
 }
