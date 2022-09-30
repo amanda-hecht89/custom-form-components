@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { InputControl } from './FormControls.jsx';
+import { InputControl } from './FormControl.jsx';
 
 test('input control should work', async () => {
   render(

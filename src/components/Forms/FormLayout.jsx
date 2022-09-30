@@ -17,7 +17,7 @@ export default function Form() {
           <SelectControl label="shade" name="shade"
             placeholder="fav color shade" required>
             <option value="1">Light</option>
-            <option value="2">Dark</option>
+            <option vaue="2">Dark</option>
             <option value="3">Pastel</option>
           </SelectControl>
 
