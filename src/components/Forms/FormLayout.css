@@ -4,6 +4,7 @@
     justify-content: center;
     width: 45%;
     outline: 5px solid rgb(143, 212, 212);
+    padding: 15px;
     
 }
 form {
@@ -15,4 +16,10 @@ form {
 .page {
     display: flex;
     justify-content: center;
+}
+
+label {
+    display: flex;
+    flex-direction: row;
+    color: rgb(143, 212, 212);
 }
