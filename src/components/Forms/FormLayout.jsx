@@ -1,4 +1,4 @@
-import styles from './Empty.css';
+import styles from './FormLayout.css';
 import { InputControl } from './FormControl.jsx';
 
 export default function Form() {
