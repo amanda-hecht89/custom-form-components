@@ -26,7 +26,7 @@ test('select control should render', async () => {
     </SelectControl>
   );
   const selectControl = screen.getByLabelText('shade');
-  expect(selectControl.shade).toEqual('Dark');
+  expect(selectControl.name).toEqual('shade');
   expect(selectControl.required).toEqual(true);
-  expect(selectControl.options.length).toEqual(2);
+  expect(selectControl.options.length).toEqual(3);
 });
