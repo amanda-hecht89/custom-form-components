@@ -1,5 +1,6 @@
 import styles from './FormLayout.css';
-import { InputControl, SelectControl, TextAreaControl } from './FormControl.jsx';
+import { InputControl, SelectControl,
+  TextAreaControl, CheckBox } from './FormControl.jsx';
 
 export default function Form() {
   return (
@@ -22,6 +23,8 @@ export default function Form() {
 
           <TextAreaControl  label="color bio" name="bio"
             placeholder="why do you love the color(s) (optional)"/>
+
+          <CheckBox legend="is this correct?" label="Yes!"/>
 
         </form>
       </div>
