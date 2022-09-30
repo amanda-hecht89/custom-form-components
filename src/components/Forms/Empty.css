@@ -1,0 +1,10 @@
+.Forms {
+    background: rgb(13, 80, 95);
+    display: flex;
+    justify-content: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
