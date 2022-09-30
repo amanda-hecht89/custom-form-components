@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { InputControl, SelectControl } from './FormControl.jsx';
+import { InputControl, SelectControl, 
+  TextAreaControl } from './FormControl.jsx';
 
 test('input control should work', async () => {
   render(
@@ -29,4 +30,19 @@ test('select control should render', async () => {
   expect(selectControl.name).toEqual('shade');
   expect(selectControl.required).toEqual(true);
   expect(selectControl.options.length).toEqual(3);
+});
+
+test('text area control should render', async () => {
+  render(<TextAreaControl
+    required
+    label="color bio"
+    name="bio"
+    placeholder="why do you love the color(s) (optional)" />
+  );
+  
+  const textControl = screen.getByLabelText('color bio');
+  expect(textControl.name).toEqual('bio');
+  expect(textControl.placeholder)
+    .toEqual('why do you love the color(s) (optional)');
+  expect(textControl.required).toEqual(true);
 });
