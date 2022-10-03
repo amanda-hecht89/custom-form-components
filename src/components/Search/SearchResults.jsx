@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import SearchResultCard from './SearchSoloCard.jsx';
 import styles from './SearchForm';
 
