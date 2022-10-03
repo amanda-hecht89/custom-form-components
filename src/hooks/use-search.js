@@ -1,14 +1,18 @@
+
 import { useEffect, useState } from 'react';
-import { getColorSchemes } from '../services/colors.js';
+import { typesGetAll } from '../services/pokedex.js';
 
 export default function useSearch() {
-  const [hexes, setHexes] = useState([]);
+
+  const [types, setTypes] = useState([]);
 
   const searchEffect = () => {
-    getColorSchemes().then(hexes => setHexes(hexes.map(t => t.scheme)));
+    typesGetAll().then(types => setTypes(types.map(t => t.type)));
   };
+
   useEffect(() => searchEffect(), []);
+
   return {
-    hexes,
+    types,
   };
 }

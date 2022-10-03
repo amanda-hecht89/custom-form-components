@@ -1,9 +1,8 @@
 import useSearch from '../../hooks/use-search.js';
 import { FormButton, SelectControl } from '../Forms/FormControl.jsx';
 
-// eslint-disable-next-line react/prop-types
-export default function SearchForm({ onSubmit, hex }) {
-  const { hexes } = useSearch();
+export default function SearchForm({ onSubmit, type }) {
+  const { types } = useSearch();
   const submitHandler = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -17,12 +16,12 @@ export default function SearchForm({ onSubmit, hex }) {
       '',
       `${location.pathname}?${params.toString()}`,
     );
-  
+
   };
   return <form onSubmit={submitHandler}>
-    <SelectControl label="Select Type" name="hex" value={hex}>
-      {hexes.map(hex => {
-        return <option key={hex} value={hex}>{hex}</option>;
+    <SelectControl label="Select Type" name="type" value={type}>
+      {types.map(type => {
+        return <option key={type} value={type}>{type}</option>;
       })}
     </SelectControl>
     <FormButton type="submit">Search</FormButton>

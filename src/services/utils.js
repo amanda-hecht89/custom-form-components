@@ -1,3 +1,5 @@
+
+
 /**
  * Utilities for interacting with services.
  */
@@ -11,18 +13,18 @@ class RequestFailureError extends Error {
     this.res = res;
   }
 }
-  
-/**
-   * Fetch a resource. For non-successful responses, reject the promise.
-   *
-   * All args passed through to fetch, so see fetch for argument documentation.
-   */
 
+/**
+ * Fetch a resource. For non-successful responses, reject the promise.
+ *
+ * All args passed through to fetch, so see fetch for argument documentation.
+ */
 export const fetchOrReject = async (...args) => {
   const res = await fetch(...args);
   if(res.status >= 400) {
     throw new RequestFailureError(
-      res, `Error requesting ${res.url} (${res.status}): ${res.body}`,
+      res,
+      `Error requesting ${res.url} (${res.status}): ${res.body}`,
     );
   } else {
     return res;

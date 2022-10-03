@@ -1,47 +1,47 @@
+
 import { useState } from 'react';
 import SearchForm from './SearchForm.jsx';
-import ColorCard from './Color.jsx';
+import PokemonCard from './PokeCard.jsx';
 import { FormButton } from '../Forms/FormControl.jsx';
 import { useLocation } from 'react-router-dom';
-import { getAllColors } from '../../services/colors.js';
+import { pokemonGetAll } from '../../services/pokedex.js';
 import styles from './Search.css';
 
 export default function Search() {
   const { search } = useLocation();
   const query = new URLSearchParams(search, [search]);
-  const hex = query.get('hex');
+  const type = query.get('type');
+  console.log('type', type);
   const searchText = query.get('searchText');
   const [page, setPage] = useState(1);
   const [searchResults, setSearchResults] = useState([]);
   const [formData, setFormData] = useState(null);
-
   const onSubmit = async (searchFormData) => {
     setPage(1);
     setFormData(searchFormData);
-    const colorResults = await getAllColors(1, searchFormData);
-    setSearchResults(colorResults.results);
+    const pokemonResults = await pokemonGetAll(1, searchFormData);
+    setSearchResults(pokemonResults.results);
   };
   const more = async () => {
     setPage(page + 1);
-    const colorResults = await getAllColors(page + 1, formData);
-    setSearchResults(searchResults.concat(colorResults.results));
+    const pokemonResults = await pokemonGetAll(page + 1, formData);
+    setSearchResults(searchResults.concat(pokemonResults.results));
   };
-
   return <section>
     <SearchForm
-      hex={hex}
+      type={type}
       searchText={searchText}
       onSubmit={onSubmit}
     />
-    <ul className={styles.colorResultsList}>
+    <ul className={styles.pokemonResultsList}>
       {searchResults.map(result => {
-        return <li key={result._id} >
-          <ColorCard color={result} />
+        return <li key={result._id} className={styles.searchResult}>
+          <PokemonCard pokemon={result} />
         </li>;
       })}
     </ul>
     { searchResults.length > 0
-      ? <FormButton onClick={more}>nexxt</FormButton>
+      ? <FormButton onClick={more}>moar</FormButton>
       : ''
     }
   </section>;
