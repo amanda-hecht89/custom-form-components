@@ -50,7 +50,7 @@ export function CheckBox({ legend, label, ...rest }) {
   );
 }
 
-export function FormButton({ children }) {
-  return <button className={style.FormButton}>{children}</button>;
+export function FormButton({ children, ...rest }) {
+  return <button className={style.FormButton}{...rest}>{children}</button>;
 }
 
