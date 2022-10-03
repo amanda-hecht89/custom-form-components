@@ -26,7 +26,7 @@ export default function Form() {
 
           <CheckBox legend="is this correct?" label="Yes!"/>
 
-          <FormButton text="Submit"/>
+          <FormButton text="Submit">Submit</FormButton>
 
         </form>
       </div>
