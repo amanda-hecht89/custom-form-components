@@ -9,7 +9,7 @@ export default function Search() {
     nextPage,
     pokemon,
     setPokemon,
-    searchParams,
+    // searchParams,
     searchResults,
     searchPokedex,
   } = useSearchResults();
@@ -19,6 +19,6 @@ export default function Search() {
       onSubmit={searchPokedex} />
     <SearchResults results={searchResults} 
       infiniteScrollRef={infiniteScrollRef}/>
-    <FormButton onClick={nextPage}>Moar</FormButton>
+    <FormButton onClick={nextPage}>Show Me More</FormButton>
   </section>;
 }

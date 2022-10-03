@@ -32,8 +32,7 @@ export default function useSearchResults() {
       const body = await search(searchObj);
       setSearchResults(body.results);
     } catch (error) {
-      console.log('grape', error);
-      setError('Error searching pokedex ' + error.body.toString());
+      setError('Error searching pokedex ' + error.body);
     }
   };
   useEffect(() => void searchPokedex(usableSearchParams), []);
