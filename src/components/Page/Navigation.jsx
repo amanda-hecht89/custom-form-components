@@ -7,6 +7,8 @@ export default function Navigation() {
       <NavLink to="">Colors</NavLink>
       <NavLink to="blue">Blue</NavLink>
       <NavLink to="orange">Orange</NavLink>
+      <NavLink to="form">Form</NavLink>
+      <NavLink to="search">Search</NavLink>
     </nav>
   );
 }

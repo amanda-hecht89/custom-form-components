@@ -11,6 +11,8 @@ import BlueGreen from './Blue/BlueGreen.jsx';
 import BabyBlue from './Blue/BabyBlue.jsx';
 import DarkBlue from './Blue/DarkBlue.jsx';
 import Layout from './Page/Layout.jsx';
+import Form from './Forms/FormLayout.jsx';
+import Search from './Search/Search.jsx';
 
 export default function App() {
   return (
@@ -23,8 +25,10 @@ export default function App() {
             <Route path="baby blue" index element={<BabyBlue />} />
             <Route path="dark blue" element={<DarkBlue />} />
             <Route path="blue green" element={<BlueGreen />} />
-
           </Route>
+          <Route path="form" element={<Form />} />
+          <Route path="search" element={<Search />} />
+
         </Route>
 
 

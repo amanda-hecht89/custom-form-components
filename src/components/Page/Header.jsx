@@ -9,8 +9,7 @@ export default function Header() {
       <div className={styles.MenuContainer}>
       </div>
 
-      <h1>My App</h1>
-
+      <h1>My Template App for the FuTuRe.....</h1>
       <div className={styles.NavigationContainer}>
         <Navigation />
       </div>
